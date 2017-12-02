@@ -30,11 +30,14 @@ __published:	// IDE-managed Components
         TToolButton *tCerc;
         TToolButton *tPatrat;
         TColorBox *tColorBox;
+        TToolButton *tPensula;
         void __fastcall Quit1Click(TObject *Sender);
         void __fastcall FormMouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
         void __fastcall FormMouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
+        void __fastcall FormMouseMove(TObject *Sender, TShiftState Shift,
+          int X, int Y);
 private:
      int StartX, StartY;// User declarations
 public:

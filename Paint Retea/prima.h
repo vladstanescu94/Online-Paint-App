@@ -38,6 +38,7 @@ __published:	// IDE-managed Components
           TShiftState Shift, int X, int Y);
         void __fastcall FormMouseMove(TObject *Sender, TShiftState Shift,
           int X, int Y);
+        void __fastcall New1Click(TObject *Sender);
 private:
      int StartX, StartY;// User declarations
 public:

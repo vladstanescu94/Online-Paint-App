@@ -86,3 +86,9 @@ void __fastcall TfMain::FormMouseMove(TObject *Sender, TShiftState Shift,
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TfMain::New1Click(TObject *Sender)
+{
+    fMain->Repaint();
+}
+//---------------------------------------------------------------------------
+

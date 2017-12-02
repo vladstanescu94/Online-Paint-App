@@ -1,6 +1,6 @@
 object fMain: TfMain
-  Left = 1623
-  Top = 142
+  Left = 1612
+  Top = 117
   Width = 1002
   Height = 568
   Caption = 'Paint'
@@ -13,6 +13,7 @@ object fMain: TfMain
   Menu = mMenu
   OldCreateOrder = False
   OnMouseDown = FormMouseDown
+  OnMouseMove = FormMouseMove
   OnMouseUp = FormMouseUp
   PixelsPerInch = 96
   TextHeight = 13
@@ -23,7 +24,7 @@ object fMain: TfMain
     Height = 49
     Align = alCustom
     ButtonHeight = 21
-    ButtonWidth = 35
+    ButtonWidth = 45
     Caption = 'ToolBar'
     Color = clSilver
     Indent = 10
@@ -54,8 +55,15 @@ object fMain: TfMain
       ImageIndex = 2
       Style = tbsCheck
     end
-    object tColorBox: TColorBox
+    object tPensula: TToolButton
       Left = 115
+      Top = 2
+      Caption = 'Pensula'
+      ImageIndex = 3
+      Style = tbsCheck
+    end
+    object tColorBox: TColorBox
+      Left = 160
       Top = 2
       Width = 145
       Height = 22
