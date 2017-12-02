@@ -7,14 +7,19 @@
 #include "Shape.h"
 #include "Linie.h"
 #include "Cerc.h"
+#include "FreeLine.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TfMain *fMain;
+
+
 //---------------------------------------------------------------------------
 __fastcall TfMain::TfMain(TComponent* Owner)
         : TForm(Owner)
 {
+
+
 }
 //---------------------------------------------------------------------------
 
@@ -42,7 +47,6 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
      if(fMain->tLinie->Down)
      {
        Linie *l = new Linie(X,Y);
-       //fMain->Canvas->Pen->Color = clRed;  
        l->draw();
        delete l;
      }
@@ -51,9 +55,20 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
      {
 
         Cerc *c = new Cerc(X,Y);
+        fMain->Canvas->Brush->Style = bsClear;
         c->draw();
         delete c;
      }
 }
 //---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 

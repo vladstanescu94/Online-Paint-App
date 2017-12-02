@@ -43,6 +43,7 @@ void Linie::setYfinal(int newY)
 }
 void Linie::draw()
 {
+      
   fMain->Canvas->MoveTo(x,y);
   fMain->Canvas->LineTo(xFinal,yFinal);
 }

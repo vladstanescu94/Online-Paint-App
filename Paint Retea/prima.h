@@ -11,6 +11,7 @@
 #include <Menus.hpp>
 #include <ToolWin.hpp>
 #include <ExtCtrls.hpp>
+#include <ScktComp.hpp>
 //---------------------------------------------------------------------------
 class TfMain : public TForm
 {
@@ -27,11 +28,16 @@ __published:	// IDE-managed Components
         TMenuItem *Redo1;
         TToolButton *tLinie;
         TToolButton *tCerc;
+        TToolButton *tPatrat;
+        TColorBox *tColorBox;
+        TToolButton *tPensula;
         void __fastcall Quit1Click(TObject *Sender);
         void __fastcall FormMouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
         void __fastcall FormMouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
+        void __fastcall FormMouseMove(TObject *Sender, TShiftState Shift,
+          int X, int Y);
 private:
      int StartX, StartY;// User declarations
 public:

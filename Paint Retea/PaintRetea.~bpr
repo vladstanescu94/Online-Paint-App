@@ -4,7 +4,7 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="PaintRetea.exe"/>
-    <OBJFILES value="PaintRetea.obj prima.obj Shape.obj Linie.obj Cerc.obj"/>
+    <OBJFILES value="PaintRetea.obj prima.obj Shape.obj Linie.obj Cerc.obj FreeLine.obj"/>
     <RESFILES value="PaintRetea.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -60,6 +60,7 @@
       <FILE FILENAME="Shape.cpp" FORMNAME="" UNITNAME="Shape" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Linie.cpp" FORMNAME="" UNITNAME="Linie" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Cerc.cpp" FORMNAME="" UNITNAME="Cerc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FreeLine.cpp" FORMNAME="" UNITNAME="FreeLine" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

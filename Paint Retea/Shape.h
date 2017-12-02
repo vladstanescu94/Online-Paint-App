@@ -2,10 +2,13 @@
 
 #ifndef ShapeH
 #define ShapeH
+#include <vcl.h>
 class Shape
 {
    protected:
       int x,y;
+      TColor color;
+
    public:
        Shape();
        virtual~Shape();

@@ -5,11 +5,15 @@
 
 #include "Shape.h"
 #include "prima.h"
+#include <vcl.h>
 
 Shape::Shape()
 {
    this->x = fMain->getX();
    this->y = fMain->getY();
+   this->color = fMain->tColorBox->Selected;
+
+
 }
 Shape::~Shape()
 {
@@ -19,6 +23,8 @@ Shape::Shape(int posX, int posY)
 {
    this->x = posX;
    this->y = posY;
+
+
 }
 
 int Shape::getX()

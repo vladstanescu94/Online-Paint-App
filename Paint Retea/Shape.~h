@@ -8,7 +8,7 @@ class Shape
       int x,y;
    public:
        Shape();
-       ~Shape();
+       virtual~Shape();
        Shape(int posX , int posY);
        int getX();
        int getY();
