@@ -1,19 +1,17 @@
 //---------------------------------------------------------------------------
 
-#ifndef LinieH
-#define LinieH
+#ifndef PatratH
+#define PatratH
 #include "Shape.h"
-#include <vcl.h>
-class Linie : public Shape
+
+class Patrat : public Shape
 {
 
-    public:
-      Linie();
-      ~Linie();
-      Linie( int xFinal, int yFinal);
-      virtual void draw();
-
-
+     public:
+       Patrat();
+       Patrat(int xFinal, int yFinal);
+       ~Patrat();
+       virtual void draw();
 };
 //---------------------------------------------------------------------------
 #endif

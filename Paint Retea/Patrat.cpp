@@ -3,30 +3,31 @@
 
 #pragma hdrstop
 
-#include "Cerc.h"
+#include "Patrat.h"
 #include "prima.h"
 
-Cerc::Cerc()
+Patrat::Patrat()
 {
    this->xFinal = 0;
    this->yFinal = 0;
 }
-Cerc::~Cerc()
+Patrat::~Patrat()
 {
 
 }
-Cerc::Cerc(int xFinal, int yFinal)
+Patrat::Patrat(int xFinal, int yFinal)
 {
    this->xFinal = xFinal;
    this->yFinal = yFinal;
 }
 
 
-void Cerc::draw()
+void Patrat::draw()
 {
     fMain->Canvas->Pen->Color = this->color;    
-    fMain->Canvas->Ellipse(x,y,xFinal,yFinal);
+    fMain->Canvas->Rectangle(x,y,xFinal,yFinal);
 }
+
 
 //---------------------------------------------------------------------------
 

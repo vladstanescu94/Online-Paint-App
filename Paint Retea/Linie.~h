@@ -3,6 +3,7 @@
 #ifndef LinieH
 #define LinieH
 #include "Shape.h"
+#include <vcl.h>
 class Linie : public Shape
 {
     protected:

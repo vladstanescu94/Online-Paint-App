@@ -45,6 +45,7 @@ void Linie::draw()
 {
       
   fMain->Canvas->MoveTo(x,y);
+  fMain->Canvas->Pen->Color = this->color;
   fMain->Canvas->LineTo(xFinal,yFinal);
 }
 //---------------------------------------------------------------------------

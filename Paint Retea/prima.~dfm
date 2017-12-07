@@ -78,6 +78,7 @@ object fMain: TfMain
       Caption = 'File'
       object New1: TMenuItem
         Caption = 'New'
+        OnClick = New1Click
       end
       object Save1: TMenuItem
         Caption = 'Save'

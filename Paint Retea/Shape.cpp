@@ -43,6 +43,22 @@ void Shape::setY(int newY)
 {
    this->y = newY;
 }
+int Shape::getXfinal()
+{
+   return xFinal;
+}
+int Shape::getYfinal()
+{
+   return yFinal;
+}
+void Shape::setXfinal(int newX)
+{
+   this->xFinal = newX;
+}
+void Shape::setYfinal(int newY)
+{
+   this->yFinal = newY;
+}
 //void Shape::draw() {
 //}
 

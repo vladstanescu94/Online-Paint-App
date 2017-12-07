@@ -7,6 +7,7 @@
 #include "Shape.h"
 #include "Linie.h"
 #include "Cerc.h"
+#include "Patrat.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -63,6 +64,14 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
         fMain->Canvas->Brush->Style = bsClear;
         c->draw();
         delete c;
+     }
+     if(fMain->tPatrat->Down)
+     {
+
+        Patrat *p = new Patrat(X,Y);
+        fMain->Canvas->Brush->Style = bsClear;
+        p->draw();
+        delete p;
      }
 }
 //---------------------------------------------------------------------------

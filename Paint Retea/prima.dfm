@@ -1,6 +1,6 @@
 object fMain: TfMain
-  Left = 1612
-  Top = 117
+  Left = 167
+  Top = 123
   Width = 1002
   Height = 568
   Caption = 'Paint'
@@ -67,6 +67,7 @@ object fMain: TfMain
       Top = 2
       Width = 145
       Height = 22
+      Style = [cbStandardColors, cbExtendedColors, cbCustomColor]
       ItemHeight = 16
       TabOrder = 0
     end
