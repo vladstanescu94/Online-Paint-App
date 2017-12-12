@@ -20,7 +20,7 @@ TfMain *fMain;
 __fastcall TfMain::TfMain(TComponent* Owner)
         : TForm(Owner)
 {
-       Canvas->Pen->Width = 5;
+       Canvas->Pen->Width = 3;
 
 }
 //---------------------------------------------------------------------------
@@ -98,6 +98,22 @@ void __fastcall TfMain::FormMouseMove(TObject *Sender, TShiftState Shift,
 void __fastcall TfMain::New1Click(TObject *Sender)
 {
     fMain->Repaint();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TfMain::tTrackBarChange(TObject *Sender)
+{
+        fMain->Canvas->Pen->Width = this->tTrackBar->Position;
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TfMain::FormCreate(TObject *Sender)
+{
+        SendMessage(tBar->Handle, TB_SETBUTTONWIDTH, 0, MAKELPARAM(0, 40));
+        tBar->Width = Screen->Width;
 }
 //---------------------------------------------------------------------------
 

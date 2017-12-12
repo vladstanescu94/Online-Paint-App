@@ -12,6 +12,7 @@
 #include <ToolWin.hpp>
 #include <ExtCtrls.hpp>
 #include <ScktComp.hpp>
+#include <ImgList.hpp>
 //---------------------------------------------------------------------------
 class TfMain : public TForm
 {
@@ -31,6 +32,13 @@ __published:	// IDE-managed Components
         TToolButton *tPatrat;
         TColorBox *tColorBox;
         TToolButton *tPensula;
+        TToolButton *tSeparator1;
+        TToolButton *tSeparator2;
+        TTrackBar *tTrackBar;
+        TToolButton *tSeparator3;
+        TToolButton *tSeparator4;
+        TToolButton *tSeparator5;
+        TImageList *tImageList;
         void __fastcall Quit1Click(TObject *Sender);
         void __fastcall FormMouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
@@ -39,6 +47,8 @@ __published:	// IDE-managed Components
         void __fastcall FormMouseMove(TObject *Sender, TShiftState Shift,
           int X, int Y);
         void __fastcall New1Click(TObject *Sender);
+        void __fastcall tTrackBarChange(TObject *Sender);
+        void __fastcall FormCreate(TObject *Sender);
 private:
      int StartX, StartY;// User declarations
 public:
