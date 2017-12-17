@@ -15,7 +15,6 @@
 TfMain *fMain;
 
 
-
 //---------------------------------------------------------------------------
 __fastcall TfMain::TfMain(TComponent* Owner)
         : TForm(Owner)
@@ -114,6 +113,54 @@ void __fastcall TfMain::FormCreate(TObject *Sender)
 {
         SendMessage(tBar->Handle, TB_SETBUTTONWIDTH, 0, MAKELPARAM(0, 40));
         tBar->Width = Screen->Width;
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+void __fastcall TfMain::tCercClick(TObject *Sender)
+{
+        if(tCerc->Down == true)
+        {
+           tLinie->Down = false;
+           tPatrat->Down = false;
+           tPensula->Down = false;
+        }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfMain::tLinieClick(TObject *Sender)
+{
+        if(tLinie->Down == true)
+        {
+           tCerc->Down = false;
+           tPatrat->Down = false;
+           tPensula->Down = false;
+        }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfMain::tPatratClick(TObject *Sender)
+{
+         if(tPatrat->Down == true)
+        {
+           tCerc->Down = false;
+           tLinie->Down = false;
+           tPensula->Down = false;
+        }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfMain::tPensulaClick(TObject *Sender)
+{
+        if(tPensula->Down == true)
+        {
+           tCerc->Down = false;
+           tPatrat->Down = false;
+           tLinie->Down = false;
+        }
 }
 //---------------------------------------------------------------------------
 

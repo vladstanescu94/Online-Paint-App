@@ -20,11 +20,7 @@ Cerc::Cerc(int xFinal, int yFinal)
    this->xFinal = xFinal;
    this->yFinal = yFinal;
 }
-Cerc::Cerc(int x, int y , int xFinal, int yFinal) : Shape(x,y)
-{
-   this->xFinal = xFinal;
-   this->yFinal = yFinal;
-}
+
 
 void Cerc::draw()
 {

@@ -5,6 +5,7 @@
 
 #include "Cerc.h"
 #include "prima.h"
+#pragma package(smart_init)
 
 Cerc::Cerc()
 {
@@ -30,4 +31,4 @@ void Cerc::draw()
 
 //---------------------------------------------------------------------------
 
-#pragma package(smart_init)
+

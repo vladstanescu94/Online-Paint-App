@@ -49,6 +49,10 @@ __published:	// IDE-managed Components
         void __fastcall New1Click(TObject *Sender);
         void __fastcall tTrackBarChange(TObject *Sender);
         void __fastcall FormCreate(TObject *Sender);
+        void __fastcall tCercClick(TObject *Sender);
+        void __fastcall tLinieClick(TObject *Sender);
+        void __fastcall tPatratClick(TObject *Sender);
+        void __fastcall tPensulaClick(TObject *Sender);
 private:
      int StartX, StartY;// User declarations
 public:

@@ -5,6 +5,7 @@
 
 #include "Linie.h"
 #include "prima.h"
+#pragma package(smart_init)
 
 Linie::Linie()
 {
@@ -31,4 +32,4 @@ void Linie::draw()
 }
 //---------------------------------------------------------------------------
 
-#pragma package(smart_init)
+

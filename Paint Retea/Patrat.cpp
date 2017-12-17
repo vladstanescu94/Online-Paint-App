@@ -5,6 +5,7 @@
 
 #include "Patrat.h"
 #include "prima.h"
+#pragma package(smart_init)
 
 Patrat::Patrat()
 {
@@ -31,4 +32,4 @@ void Patrat::draw()
 
 //---------------------------------------------------------------------------
 
-#pragma package(smart_init)
+

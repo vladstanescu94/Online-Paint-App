@@ -6,6 +6,7 @@
 #include "Shape.h"
 #include "prima.h"
 #include <vcl.h>
+#pragma package(smart_init)
 
 Shape::Shape()
 {
@@ -64,4 +65,4 @@ void Shape::setYfinal(int newY)
 
 //---------------------------------------------------------------------------
 
-#pragma package(smart_init)
+

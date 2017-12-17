@@ -3,7 +3,7 @@
 #ifndef CercH
 #define CercH
 #include "Shape.h"
-#include <vcl.h>
+
 
 class Cerc : public Shape
 {

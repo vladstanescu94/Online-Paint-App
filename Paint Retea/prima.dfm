@@ -1,6 +1,6 @@
 object fMain: TfMain
-  Left = 352
-  Top = 131
+  Left = 297
+  Top = 128
   Width = 1002
   Height = 568
   Caption = 'Paint'
@@ -41,6 +41,7 @@ object fMain: TfMain
       Top = 2
       ImageIndex = 3
       Style = tbsCheck
+      OnClick = tLinieClick
     end
     object tSeparator3: TToolButton
       Left = 37
@@ -55,6 +56,7 @@ object fMain: TfMain
       Top = 2
       ImageIndex = 0
       Style = tbsCheck
+      OnClick = tCercClick
     end
     object tSeparator4: TToolButton
       Left = 72
@@ -69,6 +71,7 @@ object fMain: TfMain
       Top = 2
       ImageIndex = 2
       Style = tbsCheck
+      OnClick = tPatratClick
     end
     object tSeparator5: TToolButton
       Left = 107
@@ -84,6 +87,7 @@ object fMain: TfMain
       Down = True
       ImageIndex = 1
       Style = tbsCheck
+      OnClick = tPensulaClick
     end
     object tSeparator1: TToolButton
       Left = 142

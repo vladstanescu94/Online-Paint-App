@@ -17,33 +17,14 @@ Linie::~Linie()
 }
 Linie::Linie( int xFinal, int yFinal)
 {
-   this->xFinal = xFinal;
-   this->yFinal = yFinal;
+    this->xFinal = xFinal;
+    this->yFinal = yFinal;
 }
-Linie::Linie(int x, int y, int xFinal, int yFinal) : Shape(x,y)
-{
-   this->xFinal = xFinal;
-   this->yFinal = yFinal;
-}
-int Linie::getXfinal()
-{
-   return xFinal;
-}
-int Linie::getYfinal()
-{
-   return yFinal;
-}
-void Linie::setXfinal(int newX)
-{
-   this->xFinal = newX;
-}
-void Linie::setYfinal(int newY)
-{
-   this->yFinal = newY;
-}
+
+
 void Linie::draw()
 {
-      
+
   fMain->Canvas->MoveTo(x,y);
   fMain->Canvas->Pen->Color = this->color;
   fMain->Canvas->LineTo(xFinal,yFinal);
