@@ -1,6 +1,6 @@
 object fMain: TfMain
-  Left = 283
-  Top = 132
+  Left = 274
+  Top = 141
   Width = 1002
   Height = 568
   Caption = 'Paint'

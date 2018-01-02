@@ -105,6 +105,11 @@ void __fastcall TfMain::FormMouseMove(TObject *Sender, TShiftState Shift,
            if((GetKeyState(VK_LBUTTON) & 0x100) != 0)
            {
              fMain->Canvas->Pen->Color = tColorBox->Selected;
+             AnsiString buffer = {"Pensula" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)};
+             for (int i=0;i<sSocket->Socket->ActiveConnections;i++)
+             {
+                sSocket->Socket->Connections[i]->SendText(buffer);
+             }
              Canvas->LineTo(X,Y);
            }
       }
@@ -230,13 +235,15 @@ void __fastcall TfMain::sSocketClientRead(TObject *Sender,
         delete pn;
      }
 
-     /*if(tip == "Pensula")
+     if(tip == "Pensula")
      {
-        fMain->Canvas->MoveTo(StartX,StartY);
-        fMain->Canvas->LineTo(X,Y);
-        fMain->Canvas->MoveTo(StartX,StartY);
 
-     } */
+             fMain->Canvas->Pen->Width = size;
+             fMain->Canvas->Pen->Color = culoare;
+             fMain->Canvas->MoveTo(X,Y);
+             fMain->Canvas->LineTo(X,Y);
+
+     }
 
 
 
