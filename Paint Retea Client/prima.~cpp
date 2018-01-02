@@ -184,8 +184,8 @@ void __fastcall TfMain::tPensulaClick(TObject *Sender)
 void __fastcall TfMain::cSocketRead(TObject *Sender,
       TCustomWinSocket *Socket)
 {
-        AnsiString message = Socket->ReceiveText();
-         TStringList *str = new TStringList;
+      AnsiString message =Socket->ReceiveText();
+     TStringList *str = new TStringList;
      str->Delimiter = '.';
      str->DelimitedText = message;
      AnsiString tip;
@@ -195,21 +195,27 @@ void __fastcall TfMain::cSocketRead(TObject *Sender,
      StartY = StrToInt(str->Strings[2]);
      X = StrToInt(str->Strings[3]);
      Y = StrToInt(str->Strings[4]);
+     TColor culoare = StringToColor(str->Strings[5]);
      if(tip == "Linie")
      {
         Linie *ln = new Linie(StartX,StartY,X,Y);
+        ln->setColor(culoare);
         ln->draw();
         delete ln;
      }
      if(tip == "Cerc")
      {
         Cerc *cn = new Cerc(StartX,StartY,X,Y);
+        cn->setColor(culoare);
+        fMain->Canvas->Brush->Style = bsClear;
         cn->draw();
         delete cn;
      }
      if(tip == "Patrat")
      {
         Patrat *pn = new Patrat(StartX,StartY,X,Y);
+        pn->setColor(culoare);
+        fMain->Canvas->Brush->Style = bsClear;
         pn->draw();
         delete pn;
      }

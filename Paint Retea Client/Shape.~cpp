@@ -44,6 +44,10 @@ void Shape::setY(int newY)
 {
    this->y = newY;
 }
+void Shape::setColor(TColor newColor)
+{
+   this->color = newColor;
+}
 int Shape::getXfinal()
 {
    return xFinal;

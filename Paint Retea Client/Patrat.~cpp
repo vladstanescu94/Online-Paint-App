@@ -21,6 +21,14 @@ Patrat::Patrat(int xFinal, int yFinal)
    this->xFinal = xFinal;
    this->yFinal = yFinal;
 }
+Patrat::Patrat(int x , int y , int xFinal, int yFinal)
+{
+     this->x = x;
+     this->y = y;
+     this->xFinal = xFinal;
+     this->yFinal = yFinal;
+}
+
 
 
 void Patrat::draw()

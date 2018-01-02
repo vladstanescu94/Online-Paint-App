@@ -6,7 +6,7 @@
 class Shape
 {
    protected:
-      int x,y , xFinal, yFinal;
+      int x,y , xFinal, yFinal, size;
       TColor color;
 
    public:
@@ -17,6 +17,7 @@ class Shape
        int getY();
        void setX(int newX);
        void setY(int newY);
+       void setSize(int newSize);
        void setColor(TColor newColor);
        int getXfinal();
        int getYfinal();

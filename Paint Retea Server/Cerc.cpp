@@ -32,7 +32,8 @@ Cerc::Cerc(int x , int y , int xFinal, int yFinal)
 
 void Cerc::draw()
 {
-    fMain->Canvas->Pen->Color = this->color;    
+    fMain->Canvas->Pen->Color = this->color;
+    fMain->Canvas->Pen->Width = this->size;    
     fMain->Canvas->Ellipse(x,y,xFinal,yFinal);
 }
 

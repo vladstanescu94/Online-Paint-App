@@ -17,6 +17,7 @@ class Shape
        int getY();
        void setX(int newX);
        void setY(int newY);
+       void setColor(TColor newColor);
        int getXfinal();
        int getYfinal();
        void setXfinal(int newX);

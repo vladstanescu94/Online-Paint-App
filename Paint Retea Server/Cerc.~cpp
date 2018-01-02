@@ -21,6 +21,13 @@ Cerc::Cerc(int xFinal, int yFinal)
    this->xFinal = xFinal;
    this->yFinal = yFinal;
 }
+Cerc::Cerc(int x , int y , int xFinal, int yFinal)
+{
+     this->x = x;
+     this->y = y;
+     this->xFinal = xFinal;
+     this->yFinal = yFinal;
+}
 
 
 void Cerc::draw()
