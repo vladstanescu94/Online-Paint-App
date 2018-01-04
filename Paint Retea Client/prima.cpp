@@ -54,7 +54,7 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
      if(fMain->tLinie->Down)
      {
        Linie *l = new Linie(X,Y);
-       AnsiString buffer = {"Linie" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)};
+       AnsiString buffer = "Linie" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
        cSocket->Socket->SendText(buffer);
        l->draw();
        delete l;
@@ -65,7 +65,7 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
 
         Cerc *c = new Cerc(X,Y);
         fMain->Canvas->Brush->Style = bsClear;
-        AnsiString buffer = {"Cerc" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)};
+        AnsiString buffer = "Cerc" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
         cSocket->Socket->SendText(buffer);
         c->draw();
         delete c;
@@ -75,7 +75,7 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
 
         Patrat *p = new Patrat(X,Y);
         fMain->Canvas->Brush->Style = bsClear;
-        AnsiString buffer = {"Patrat" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)};
+        AnsiString buffer = "Patrat" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
         cSocket->Socket->SendText(buffer);
         p->draw();
         delete p;
@@ -95,11 +95,11 @@ void __fastcall TfMain::FormMouseMove(TObject *Sender, TShiftState Shift,
            if((GetKeyState(VK_LBUTTON) & 0x100) != 0)
            {
              fMain->Canvas->Pen->Color = tColorBox->Selected;
-             AnsiString buffer = {"Pensula" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)};
+             AnsiString buffer = "Pensula" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
              cSocket->Socket->SendText(buffer);
              Canvas->LineTo(X,Y);
-
            }
+
       }
 
 }
