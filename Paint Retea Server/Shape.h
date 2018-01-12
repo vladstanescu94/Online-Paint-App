@@ -25,7 +25,6 @@ class Shape
        void setYfinal(int newY);
        virtual void draw()=0;
 
-
 };
 
 //---------------------------------------------------------------------------

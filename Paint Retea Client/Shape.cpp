@@ -14,8 +14,6 @@ Shape::Shape()
    this->y = fMain->getY();
    this->color = fMain->tColorBox->Selected;
    this->size = fMain->tTrackBar->Position;
-
-
 }
 Shape::~Shape()
 {
@@ -25,8 +23,6 @@ Shape::Shape(int posX, int posY)
 {
    this->x = posX;
    this->y = posY;
-
-
 }
 
 int Shape::getX()
@@ -69,8 +65,6 @@ void Shape::setYfinal(int newY)
 {
    this->yFinal = newY;
 }
-//void Shape::draw() {
-//}
 
 //---------------------------------------------------------------------------
 

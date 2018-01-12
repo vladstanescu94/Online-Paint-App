@@ -25,8 +25,6 @@ Shape::Shape(int posX, int posY)
 {
    this->x = posX;
    this->y = posY;
-
-
 }
 
 int Shape::getX()
@@ -69,8 +67,6 @@ void Shape::setYfinal(int newY)
 {
    this->yFinal = newY;
 }
-//void Shape::draw() {
-//}
 
 //---------------------------------------------------------------------------
 

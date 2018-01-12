@@ -7,7 +7,6 @@
 
 class Cerc : public Shape
 {
-
      public:
        Cerc();
        Cerc(int xFinal, int yFinal);

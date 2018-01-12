@@ -29,8 +29,6 @@ Patrat::Patrat(int x , int y , int xFinal, int yFinal)
      this->yFinal = yFinal;
 }
 
-
-
 void Patrat::draw()
 {
     fMain->Canvas->Pen->Color = this->color;

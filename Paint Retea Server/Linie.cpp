@@ -32,7 +32,6 @@ Linie::Linie(int x , int y , int xFinal, int yFinal)
 
 void Linie::draw()
 {
-
   fMain->Canvas->MoveTo(x,y);
   fMain->Canvas->Pen->Color = this->color;
   fMain->Canvas->Pen->Width = this->size;

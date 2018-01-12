@@ -14,7 +14,6 @@ class Linie : public Shape
       Linie (int x , int y , int xFinal, int yFinal);
       virtual void draw();
 
-
 };
 //---------------------------------------------------------------------------
 #endif

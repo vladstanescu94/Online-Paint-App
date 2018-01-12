@@ -30,19 +30,17 @@ void __fastcall TfMain::Quit1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-
-
-
 void __fastcall TfMain::FormMouseDown(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
         StartX=X;
         StartY=Y;
         Canvas->MoveTo(X,Y);
-
-        
-
+        AnsiString orig = "Origine" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY);
+        for (int i=0;i<sSocket->Socket->ActiveConnections;i++)
+        {
+         sSocket->Socket->Connections[i]->SendText(orig);
+        }
 
 }
 //---------------------------------------------------------------------------
@@ -54,24 +52,25 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
      if(fMain->tLinie->Down)
      {
        Linie *l = new Linie(X,Y);
-       AnsiString bufferServer = "Linie" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
+       AnsiString bufferServer = "Linie" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)+ AnsiString(".");
        for (int i=0;i<sSocket->Socket->ActiveConnections;i++)
        {
-        sSocket->Socket->Connections[i]->SendText(bufferServer);
-        }
+         sSocket->Socket->Connections[i]->SendText(bufferServer);
+       }
        l->draw();
 
        delete l;
+
      }
 
      if(fMain->tCerc->Down)
      {
 
         Cerc *c = new Cerc(X,Y);
-        AnsiString bufferServer = "Cerc" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
+        AnsiString bufferServer = "Cerc" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)+ AnsiString(".");
         for (int i=0;i<sSocket->Socket->ActiveConnections;i++)
         {
-        sSocket->Socket->Connections[i]->SendText(bufferServer);
+          sSocket->Socket->Connections[i]->SendText(bufferServer);
         }
         fMain->Canvas->Brush->Style = bsClear;
         c->draw();
@@ -81,10 +80,10 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
      {
 
         Patrat *p = new Patrat(X,Y);
-        AnsiString bufferServer = "Patrat" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
+        AnsiString bufferServer = "Patrat" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)+ AnsiString(".");
         for (int i=0;i<sSocket->Socket->ActiveConnections;i++)
         {
-        sSocket->Socket->Connections[i]->SendText(bufferServer);
+          sSocket->Socket->Connections[i]->SendText(bufferServer);
         }
         fMain->Canvas->Brush->Style = bsClear;
         p->draw();
@@ -93,27 +92,22 @@ void __fastcall TfMain::FormMouseUp(TObject *Sender, TMouseButton Button,
 }
 //---------------------------------------------------------------------------
 
-
-
-
 void __fastcall TfMain::FormMouseMove(TObject *Sender, TShiftState Shift,
       int X, int Y)
 {
-
-      if(fMain->tPensula->Down)
-      {
+       if(fMain->tPensula->Down)
+         {
            if((GetKeyState(VK_LBUTTON) & 0x100) != 0)
            {
              fMain->Canvas->Pen->Color = tColorBox->Selected;
-             AnsiString bufferServer = "Pensula" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position);
+             Canvas->LineTo(X,Y);
+             AnsiString bufferServer = "Pensula" + AnsiString(".") +IntToStr(StartX)+ AnsiString(".") +  IntToStr(StartY)+ AnsiString(".") + IntToStr(X)+ AnsiString(".") + IntToStr(Y) +AnsiString(".")+ ColorToString(tColorBox->Selected)+ AnsiString(".") +  IntToStr(tTrackBar->Position)+ AnsiString(".");
              for (int i=0;i<sSocket->Socket->ActiveConnections;i++)
              {
                 sSocket->Socket->Connections[i]->SendText(bufferServer);
              }
-             Canvas->LineTo(X,Y);
            }
       }
-
 }
 //---------------------------------------------------------------------------
 
@@ -136,14 +130,8 @@ void __fastcall TfMain::FormCreate(TObject *Sender)
 {
         SendMessage(tBar->Handle, TB_SETBUTTONWIDTH, 0, MAKELPARAM(0, 40));
         tBar->Width = Screen->Width;
-        
-
 }
 //---------------------------------------------------------------------------
-
-
-
-
 
 void __fastcall TfMain::tCercClick(TObject *Sender)
 {
@@ -198,15 +186,52 @@ void __fastcall TfMain::sSocketClientRead(TObject *Sender,
      TStringList *str = new TStringList;
      str->Delimiter = '.';
      str->DelimitedText = message;
+     if(str->Strings[0] == "Origine")
+     {
+        int StratX, StratY;
+        StratX = StrToInt(str->Strings[1]);
+        StratY = StrToInt(str->Strings[2]);
+        fMain->Canvas->MoveTo(StratX,StratY);
+        return;
+     }
+     for(int i=2;i<20;i++)
+     {
+        if(str->Count >= i*7)
+        {
+               AnsiString tip;
+               tip = str->Strings[(i-1)*7];
+               int StartX, StartY, X, Y, size;
+               StartX = StrToInt(str->Strings[(i-1)*7+1]);
+               StartY = StrToInt(str->Strings[(i-1)*7+2]);
+               X = StrToInt(str->Strings[(i-1)*7+3]);
+               Y = StrToInt(str->Strings[(i-1)*7+4]);
+               TColor culoare = StringToColor(str->Strings[(i-1)*7+5]);
+               size = StrToInt(str->Strings[(i-1)*7+6]);
+
+               if(tip == "Pensula")
+                {
+                        fMain->Canvas->Pen->Width = size;
+                        fMain->Canvas->Pen->Color = culoare;
+                        fMain->Canvas->LineTo(X,Y);
+                }
+
+        }else
+        {
+                break;
+        }
+     }
+
+
      AnsiString tip;
      tip = str->Strings[0];
-     int StartX , StartY,X,Y;
+     int StartX, StartY, X, Y, size;
      StartX = StrToInt(str->Strings[1]);
      StartY = StrToInt(str->Strings[2]);
      X = StrToInt(str->Strings[3]);
      Y = StrToInt(str->Strings[4]);
      TColor culoare = StringToColor(str->Strings[5]);
-     int size = StrToInt(str->Strings[6]);
+     size = StrToInt(str->Strings[6]);
+
      if(tip == "Linie")
      {
         Linie *ln = new Linie(StartX,StartY,X,Y);
@@ -237,15 +262,15 @@ void __fastcall TfMain::sSocketClientRead(TObject *Sender,
      {
         fMain->Canvas->Pen->Width = size;
         fMain->Canvas->Pen->Color = culoare;
-        fMain->Canvas->MoveTo(X,Y);
         fMain->Canvas->LineTo(X,Y);
      }
-
-
-
-
 }
 //---------------------------------------------------------------------------
+
+
+
+
+
 
 
 

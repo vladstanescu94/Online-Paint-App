@@ -6,7 +6,6 @@
 
 class Patrat : public Shape
 {
-
      public:
        Patrat();
        Patrat(int xFinal, int yFinal);

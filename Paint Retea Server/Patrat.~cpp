@@ -33,7 +33,8 @@ Patrat::Patrat(int x , int y , int xFinal, int yFinal)
 
 void Patrat::draw()
 {
-    fMain->Canvas->Pen->Color = this->color;    
+    fMain->Canvas->Pen->Color = this->color;
+    fMain->Canvas->Pen->Width = this->size;
     fMain->Canvas->Rectangle(x,y,xFinal,yFinal);
 }
 
